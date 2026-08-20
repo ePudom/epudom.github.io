@@ -4,18 +4,18 @@
 // ============================================================
 
 export const profile = {
-  name: "Your Name",
+  name: "Bisola Ogunye",
   role: "Data Analyst",
   tagline: "Turning Data Into Actionable Insights",
   intro:
     "I use data analysis, visualization, and business intelligence to uncover insights and support better decision-making. I help teams ask the right questions, clean and structure their data, and turn raw numbers into stories that drive action.",
   location: "Available remotely · Worldwide",
-  email: "you@example.com",
+  email: "bisolaogunye@gmail.com",
   resumeUrl: "#", // replace with a link to your PDF resume
   socials: {
-    linkedin: "https://www.linkedin.com/",
-    github: "https://github.com/",
-    email: "mailto:you@example.com",
+    linkedin: "https://www.linkedin.com/in/bisolaogunye",
+    github: "https://github.com/bisolaogunye",
+    email: "mailto:bisolaogunye@gmail.com",
   },
   profileImage: "https://media.base44.com/images/public/6a7eed06a9d4019d6fb60f63/3d3214849_generated_image.png",
 };
