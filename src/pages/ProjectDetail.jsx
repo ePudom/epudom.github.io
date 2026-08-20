@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
+  Github,
   LayoutDashboard,
   FileDown,
   Database,
@@ -29,10 +30,10 @@ import { projects } from "@/data/portfolio";
 
 const COLORS = ["#00F0FF", "#8A2BE2", "#00FF41", "#FFD166"];
 const tooltipStyle = {
-  background: "hsl(222 30% 8%)",
-  border: "1px solid hsl(222 25% 16%)",
+  background: "hsl(var(--popover))",
+  border: "1px solid hsl(var(--border))",
   borderRadius: "0.5rem",
-  color: "#D1D9E0",
+  color: "hsl(var(--foreground))",
   fontSize: "12px",
 };
 
@@ -60,17 +61,17 @@ function ProjectChart({ project }) {
         >
           <CartesianGrid
             strokeDasharray="3 3"
-            stroke="hsl(222 25% 16%)"
+            stroke="hsl(var(--border))"
             vertical={false}
           />
           <XAxis
             dataKey="name"
-            tick={{ fill: "#8a93a0", fontSize: 10 }}
+            tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 10 }}
             axisLine={false}
             tickLine={false}
           />
           <YAxis
-            tick={{ fill: "#8a93a0", fontSize: 11 }}
+            tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }}
             axisLine={false}
             tickLine={false}
           />
@@ -132,8 +133,8 @@ export default function ProjectDetail() {
   const linkItems = [
     {
       key: "github",
-      label: "Kaggle Notebook",
-      icon: ExternalLink,
+      label: "GitHub Repository",
+      icon: Github,
       href: project.links.github,
     },
     {
@@ -255,24 +256,6 @@ export default function ProjectDetail() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </div>
-
-            {project.gallery && project.gallery.length > 0 && (
-              <div className="grid sm:grid-cols-2 gap-4">
-                {project.gallery.map((src, i) => (
-                  <div
-                    key={i}
-                    className="overflow-hidden rounded-xl border border-border"
-                  >
-                    <Image
-                      src={src}
-                      alt={`${project.title} chart ${i + 1}`}
-                      className="w-full object-cover"
-                      fittingType="fit"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
 
             <Reveal>
               <Section

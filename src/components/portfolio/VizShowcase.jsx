@@ -63,10 +63,10 @@ const correlation = Array.from({ length: 26 }, (_, i) => ({
 const COLORS = ["#00F0FF", "#8A2BE2", "#00FF41", "#FFD166"];
 
 const tooltipStyle = {
-  background: "hsl(222 30% 8%)",
-  border: "1px solid hsl(222 25% 16%)",
+  background: "hsl(var(--popover))",
+  border: "1px solid hsl(var(--border))",
   borderRadius: "0.5rem",
-  color: "#D1D9E0",
+  color: "hsl(var(--foreground))",
   fontSize: "12px",
 };
 
@@ -175,17 +175,23 @@ export default function VizShowcase() {
                     </defs>
                     <CartesianGrid
                       strokeDasharray="3 3"
-                      stroke="hsl(222 25% 16%)"
+                      stroke="hsl(var(--border))"
                       vertical={false}
                     />
                     <XAxis
                       dataKey="month"
-                      tick={{ fill: "#8a93a0", fontSize: 11 }}
+                      tick={{
+                        fill: "hsl(var(--muted-foreground))",
+                        fontSize: 11,
+                      }}
                       axisLine={false}
                       tickLine={false}
                     />
                     <YAxis
-                      tick={{ fill: "#8a93a0", fontSize: 11 }}
+                      tick={{
+                        fill: "hsl(var(--muted-foreground))",
+                        fontSize: 11,
+                      }}
                       axisLine={false}
                       tickLine={false}
                     />
@@ -264,17 +270,23 @@ export default function VizShowcase() {
                   >
                     <CartesianGrid
                       strokeDasharray="3 3"
-                      stroke="hsl(222 25% 16%)"
+                      stroke="hsl(var(--border))"
                       vertical={false}
                     />
                     <XAxis
                       dataKey="name"
-                      tick={{ fill: "#8a93a0", fontSize: 11 }}
+                      tick={{
+                        fill: "hsl(var(--muted-foreground))",
+                        fontSize: 11,
+                      }}
                       axisLine={false}
                       tickLine={false}
                     />
                     <YAxis
-                      tick={{ fill: "#8a93a0", fontSize: 11 }}
+                      tick={{
+                        fill: "hsl(var(--muted-foreground))",
+                        fontSize: 11,
+                      }}
                       axisLine={false}
                       tickLine={false}
                     />
@@ -301,17 +313,23 @@ export default function VizShowcase() {
                   >
                     <CartesianGrid
                       strokeDasharray="3 3"
-                      stroke="hsl(222 25% 16%)"
+                      stroke="hsl(var(--border))"
                     />
                     <XAxis
                       dataKey="x"
-                      tick={{ fill: "#8a93a0", fontSize: 11 }}
+                      tick={{
+                        fill: "hsl(var(--muted-foreground))",
+                        fontSize: 11,
+                      }}
                       axisLine={false}
                       tickLine={false}
                     />
                     <YAxis
                       dataKey="y"
-                      tick={{ fill: "#8a93a0", fontSize: 11 }}
+                      tick={{
+                        fill: "hsl(var(--muted-foreground))",
+                        fontSize: 11,
+                      }}
                       axisLine={false}
                       tickLine={false}
                     />

@@ -10,6 +10,16 @@
     <meta property="og:description" content="Data analysis, visualization, and business intelligence portfolio." />
     <meta property="og:type" content="website" />
     <title>Data Analyst | Turning Data Into Actionable Insights</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('portfolio-theme');
+          if (t !== 'light') document.documentElement.classList.add('dark');
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

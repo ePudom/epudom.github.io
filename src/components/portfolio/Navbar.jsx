@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/data/portfolio";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -60,6 +61,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
           <a
             href={profile.socials.github}
             target="_blank"
@@ -118,6 +120,7 @@ export default function Navbar() {
               </li>
             ))}
             <li className="flex items-center gap-4 pt-3">
+              <ThemeToggle />
               <a
                 href={profile.socials.github}
                 target="_blank"

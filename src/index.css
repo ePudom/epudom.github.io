@@ -6,6 +6,36 @@
 
 @layer base {
   :root {
+    /* Light theme */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 187 92% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 93%;
+    --muted-foreground: 215 16% 42%;
+    --accent: 271 76% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 187 92% 38%;
+    --terminal: 142 71% 32%;
+    --radius: 0.5rem;
+    --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  .dark {
+    /* Dark theme (original design) */
     --background: 210 35% 4%;
     --foreground: 213 27% 85%;
     --card: 222 30% 8%;
@@ -26,11 +56,6 @@
     --input: 222 25% 16%;
     --ring: 187 100% 50%;
     --terminal: 120 100% 50%;
-    --radius: 0.5rem;
-    --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   }
 }
 
@@ -46,7 +71,6 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    background-color: #05070A;
   }
 
   ::selection {
@@ -67,15 +91,15 @@
 
   .grid-bg {
     background-image:
-      linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
     background-size: 48px 48px;
   }
 
   .grid-bg-fine {
     background-image:
-      linear-gradient(rgba(209, 217, 224, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(209, 217, 224, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(120, 130, 145, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120, 130, 145, 0.08) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
@@ -88,7 +112,7 @@
   }
 
   .focus-ring:focus-visible {
-    outline: 2px solid #00F0FF;
+    outline: 2px solid hsl(var(--ring));
     outline-offset: 4px;
   }
 
