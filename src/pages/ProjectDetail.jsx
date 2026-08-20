@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
-  Github,
   LayoutDashboard,
   FileDown,
   Database,
@@ -133,8 +132,8 @@ export default function ProjectDetail() {
   const linkItems = [
     {
       key: "github",
-      label: "GitHub Repository",
-      icon: Github,
+      label: "Kaggle Notebook",
+      icon: ExternalLink,
       href: project.links.github,
     },
     {
@@ -256,6 +255,24 @@ export default function ProjectDetail() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </div>
+
+            {project.gallery && project.gallery.length > 0 && (
+              <div className="grid sm:grid-cols-2 gap-4">
+                {project.gallery.map((src, i) => (
+                  <div
+                    key={i}
+                    className="overflow-hidden rounded-xl border border-border"
+                  >
+                    <Image
+                      src={src}
+                      alt={`${project.title} chart ${i + 1}`}
+                      className="w-full object-cover"
+                      fittingType="fit"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
 
             <Reveal>
               <Section

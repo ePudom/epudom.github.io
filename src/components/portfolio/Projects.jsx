@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
-  Github,
   ExternalLink,
   LayoutDashboard,
 } from "lucide-react";
@@ -104,10 +103,10 @@ export default function Projects({ limit }) {
                           href={p.links.github}
                           target="_blank"
                           rel="noreferrer"
-                          aria-label="GitHub repository"
+                          aria-label="Kaggle notebook"
                           className="p-1.5 text-muted-foreground hover:text-primary transition-colors"
                         >
-                          <Github className="h-4 w-4" />
+                          <ExternalLink className="h-4 w-4" />
                         </a>
                       )}
                       {p.links.dashboard && (

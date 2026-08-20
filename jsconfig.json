@@ -16,7 +16,7 @@
     "resolveJsonModule": true,
     "types": []
   },
-  "include": ["src/components/**/*.js", "src/pages/**/*.jsx", "src/Layout.jsx", "src/components/ui/switch.jsx"],
+  "include": ["src/components/**/*.js", "src/pages/**/*.jsx", "src/Layout.jsx", "src/components/ui/switch.jsx", "src/data/**/*.js", "src/vite-env.d.ts"],
   "exclude": [
     "node_modules",
     "dist",

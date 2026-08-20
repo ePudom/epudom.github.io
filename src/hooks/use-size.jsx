@@ -1,27 +1,26 @@
 import * as React from "react";
 
+// Measures a DOM node's content box and re-measures on resize.
+// Returns null until the first measurement has happened (useLayoutEffect
+// runs before paint, so consumers never render a stale/guessed size).
 export function useSize(ref) {
   const [size, setSize] = React.useState(null);
 
-  // useLayoutEffect (not useEffect): the initial measurement must land before
-  // the browser paints, so consumers can render their real content on the
-  // very first painted frame instead of a guess. A ResizeObserver's first
-  // callback arrives too late for that — by then an <img> src guess has
-  // already been dispatched to the network.
   React.useLayoutEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+    const node = ref.current;
+    if (!node) return;
 
-    const rect = element.getBoundingClientRect();
-    setSize({ width: rect.width, height: rect.height });
-
-    const observer = new ResizeObserver(([entry]) => {
-      const { width, height } = entry.contentRect;
+    const updateSize = () => {
+      const { width, height } = node.getBoundingClientRect();
       setSize({ width, height });
-    });
+    };
 
-    observer.observe(element);
-    return () => observer.disconnect();
+    updateSize();
+
+    const resizeObserver = new ResizeObserver(updateSize);
+    resizeObserver.observe(node);
+
+    return () => resizeObserver.disconnect();
   }, [ref]);
 
   return size;
